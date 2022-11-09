@@ -1,0 +1,12 @@
+<div class="panel">
+  <div class="panel-heading">
+    <ul *ngIf="exchangeRateFromServer.length > 0">
+      <li *ngFor="let currency of exchangeRateFromServer">
+        {{currency.cc}}: {{(+currency.rate).toFixed(2)}}
+      </li>
+    </ul>
+    <p *ngIf="exchangeRateFromServer.length === 0">
+      Loading...
+    </p>
+  </div>
+</div>

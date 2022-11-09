@@ -1,0 +1,68 @@
+<section class="section">
+  <h1 class="title">Конвертер</h1>
+
+  <div class="columns">
+    <div class="column">
+      <div class="field">
+        <div class="control">
+          <div class="select is-large">
+            <select 
+              class="selectPanel"
+              (change)="handleChangeSelect($event, 'firstSelect')"
+            >
+              <option 
+                value="{{currency.cc}}" 
+                *ngFor="let currency of exchangeRate"
+              >
+                {{currency.cc}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    
+      <div class="field">
+        <div class="control">
+          <input 
+            class="input is-large" 
+            type="text" 
+            (keyup)="handleChangeInput($event, 'firstInput')"
+            value="{{firstInputValue}}"
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <div class="control">
+          <div class="select is-large">
+            <select 
+              class="selectPanel"
+              (change)="handleChangeSelect($event, 'secondSelect')"
+            >
+              <option 
+                *ngFor="let currency of exchangeRate"
+                value="{{currency.cc}}" 
+                selected
+              >
+                {{currency.cc}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    
+      <div class="field">
+        <div class="control">
+          <input 
+            class="input is-large" 
+            type="text"
+            (keyup)="handleChangeInput($event, 'secondInput')"
+            value="{{secondInputValue}}"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
